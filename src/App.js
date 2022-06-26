@@ -1,23 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-
+import React , {useState} from 'react'; 
 function App() {
+  //const [count , setCount] = useState(0);
+  const [{count,count2},setCount] = useState({count:0,count2:1});
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <p onClick={() => setCount(currentState => ({...currentState,count:currentState.count+1}))}> you clicked {count}</p>
     </div>
   );
 }
